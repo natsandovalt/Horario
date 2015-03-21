@@ -36,7 +36,8 @@ var Materia = [
   nombreProfesor: "Luis Humberto González",
   claveMateria: "TC2016.3",
   salon: "A3303",
-  letra: 'A'
+  letra: 'A',
+  claseCompartida: false
 },
 {
   nomMateria: "Organización Computacional",
@@ -52,7 +53,8 @@ var Materia = [
   nombreProfesor: "Mario Isidro de la Fuente",
   claveMateria: "TC1016.3",
   salon: "A3101",
-  letra: 'B'
+  letra: 'B',
+  claseCompartida: false
 },
 {
   nomMateria: "Fundamentos de Diseño Interactivo",
@@ -68,7 +70,8 @@ var Materia = [
   nombreProfesor: "Cleopatra Garza",
   claveMateria: "TC1015.1",
   salon: "CI220B",
-  letra 'C'
+  letra 'C',
+  claseCompartida: false
 },
 {
   nomMateria :"Administración e innovación en modelos de negocio",
@@ -84,7 +87,8 @@ var Materia = [
   nombreProfesor: "Miguel Angel Flores",
   claveMateria: "AD1005.3",
   salon: "A6404",
-  letra: 'D'
+  letra: 'D',
+  claseCompartida: false
 },
 {
   nomMateria: "Matemáticas II",
@@ -100,7 +104,8 @@ var Materia = [
   nombreProfesor: "Juan Antonio Alanís",
   claveMateria: "MA1017.3",
   salon: "A4307",
-  letra: 'E'
+  letra: 'E',
+  claseCompartida: false
 },
 {
   nomMateria: "Matemáticas II",
@@ -116,7 +121,8 @@ var Materia = [
   nombreProfesor: "María Dhlema Rendón",
   claveMateria: "MA1017.28",
   salon: "A7403",
-  letra: 'F'
+  letra: 'F',
+  claseCompartida: false
 },
 {
   nomMateria: "Matemáticas I",
@@ -132,7 +138,8 @@ var Materia = [
   nombreProfesor: "Francisco Morales",
   claveMateria: "Ma1015.29",
   salon: "A7205",
-  letra: 'G'
+  letra: 'G',
+  claseCompartida: false
 },
 {
   nomMateria: "Análisis y expresión verbal",
@@ -148,7 +155,8 @@ var Materia = [
   nombreProfesor: "Mirthala García",
   claveMateria: "H1040.18",
   salon: "A1416",
-  letra: 'H'
+  letra: 'H',
+  claseCompartida: false
 },
 {
   nomMateria: "Cambio climático y uso de energía",
@@ -164,7 +172,8 @@ var Materia = [
   nombreProfesor: "Ana Yael Vanoye",
   claveMateria: "DS1005.15",
   salon: "A4420",
-  letra: 'I'
+  letra: 'I',
+  claseCompartida: false
 },
 {
   nomMateria: "Física I",
@@ -180,7 +189,8 @@ var Materia = [
   nombreProfesor: "Oscar Arturo Garza",
   claveMateria: "F1002.12",
   salon: "CI406",
-  letra: 'J'
+  letra: 'J',
+  claseCompartida: false
 },
 {
   nomMateria: "Almán básico II",
@@ -196,7 +206,8 @@ var Materia = [
   nombreProfesor: "Petra Kosíkova",
   claveMateria: "HI95021.1",
   salon: "A4207",
-  letra: 'K'
+  letra: 'K',
+  claseCompartida: false
 },
 {
   nomMateria: "Matemáticas Discretas",
@@ -212,7 +223,8 @@ var Materia = [
   nombreProfesor: "Ramón Felipe Brena",
   claveMateria:"TC1003.5",
   salon: "A3302",
-  letra: 'L'
+  letra: 'L',
+  claseCompartida: false
 },
 {
   nomMateria: "Fundamentos de Programación",
@@ -228,7 +240,8 @@ var Materia = [
   nombreProfesor: "Javier Alberto Giese",
   claveMateria: "TC1014.10",
   salon: "CDES115",
-  letra: 'M'
+  letra: 'M',
+  claseCompartida: false
 },
 {
   nomMateria: "Introducción a la ingeniería en tecnologías computacionales",
@@ -244,7 +257,8 @@ var Materia = [
   nombreProfesor: "Elda Quiroga",
   claveMateria: "TC1022.2",
   salon: "A6206",
-  letra: 'N'
+  letra: 'N',
+  claseCompartida: false
 }
 ];
 
@@ -256,5 +270,16 @@ var findPosition = function (letter)
       return i;
     else
       return -1;
+  }
+};
+
+var compare = function (code1, code2)
+{
+  for (var i = 0; i < code1.length; i++)
+  {
+    for (var j = 0; j < code2.length; i++)
+    {
+      
+    }
   }
 };
