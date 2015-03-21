@@ -21,8 +21,8 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
-/*Programación*/
-var Materia = {
+var Materia = [
+  {
   nomMateria: "Programación Orientada Objetos",
   horaInicio: "09:00",
   horaFin:"10:30",
@@ -36,9 +36,8 @@ var Materia = {
   nombreProfesor: "Luis Humberto González",
   claveMateria: "TC2016.3",
   salon: "A3303"
-};
-/*Organización Computacional*/
-var Materia = {
+},
+{
   nomMateria: "Organización Computacional",
   horaFin: "10:30",
   horaFin: "12:00",
@@ -52,9 +51,8 @@ var Materia = {
   nombreProfesor: "Mario Isidro de la Fuente",
   claveMateria: "TC1016.3",
   salon: "A3101"
-};
-/*Diseño Interactivo*/
-var Materia = {
+},
+{
   nomMateria: "Fundamentos de Diseño Interactivo",
   horaInicio: "15:00",
   horaFin: "16:30",
@@ -68,9 +66,8 @@ var Materia = {
   nombreProfesor: "Cleopatra Garza",
   claveMateria: "TC1015.1",
   salon: "CI220B"
-};
-/*Administración*/
-var Materia = {
+},
+{
   nomMateria :"Administración e innovación en modelos de negocio",
   horaInicio: "09:00",
   horaFin: "10:30",
@@ -84,9 +81,8 @@ var Materia = {
   nombreProfesor: "Miguel Angel Flores",
   claveMateria: "AD1005.3",
   salon: "A6404"
-};
-/*Matemáticas*/
-var Materia = {
+},
+{
   nomMateria: "Matemáticas II",
   horaInicio: "10:30",
   horaFin: "12:00",
@@ -100,9 +96,8 @@ var Materia = {
   nombreProfesor: "Juan Antonio Alanís",
   claveMateria: "MA1017.3",
   salon: "A4307"
-};
-
-var Materia = {
+},
+{
   nomMateria: "Matemáticas II",
   horaInicio: "12:00",
   horaFin: "13:30",
@@ -116,9 +111,8 @@ var Materia = {
   nombreProfesor: "María Dhlema Rendón",
   claveMateria: "MA1017.28",
   salon: "A7403"
-};
-
-var Materia = {
+},
+{
   nomMateria: "Matemáticas I",
   horaInicio: "12:00",
   horaFin: "13:30",
@@ -132,9 +126,8 @@ var Materia = {
   nombreProfesor: "Francisco Morales",
   claveMateria: "Ma1015.29",
   salon: "A7205"
-};
-/*Análisis y expresión verbal*/
-var Materia = {
+},
+{
   nomMateria: "Análisis y expresión verbal",
   horaInicio: "15:00",
   horaFin: "16:30",
@@ -148,9 +141,8 @@ var Materia = {
   nombreProfesor: "Mirthala García",
   claveMateria: "H1040.18",
   salon: "A1416"
-};
-/*Cambio Climático*/
-var Materia = {
+},
+{
   nomMateria: "Cambio climático y uso de energía",
   horaInicio: "15:00",
   horaFin: "16:30",
@@ -164,9 +156,8 @@ var Materia = {
   nombreProfesor: "Ana Yael Vanoye",
   claveMateria: "DS1005.15",
   salon: "A4420"
-};
-/*Física*/
-var Materia = {
+},
+{
   nomMateria: "Física I",
   horaInicio: "13:30",
   horaFin: "15:00",
@@ -180,9 +171,8 @@ var Materia = {
   nombreProfesor: "Oscar Arturo Garza",
   claveMateria: "F1002.12",
   salon: "CI406"
-};
-/*Alemán*/
-var Materia = {
+},
+{
   nomMateria: "Almán básico II",
   horaInicio: "13:30",
   horaFin: "15:00",
@@ -196,9 +186,8 @@ var Materia = {
   nombreProfesor: "Petra Kosíkova",
   claveMateria: "HI95021.1",
   salon: "A4207"
-};
-/*Matemáticas Discretas*/
-var Materia = {
+},
+{
   nomMateria: "Matemáticas Discretas",
   horaInicio: "15:00",
   horaFin: "16:30",
@@ -212,9 +201,8 @@ var Materia = {
   nombreProfesor: "Ramón Felipe Brena",
   claveMateria:"TC1003.5",
   salon: "A3302"
-};
-/*Fundamentos de Programación*/
-var Materia = {
+},
+{
   nomMateria: "Fundamentos de Programación",
   horaInicio: "10:30",
   horaFin: "12:00",
@@ -228,9 +216,8 @@ var Materia = {
   nombreProfesor: "Javier Alberto Giese",
   claveMateria: "TC1014.10",
   salon: "CDES115"
-};
-/*Introducción a la ingeniería en tecnologías computacionales*/
-var Materia = {
+},
+{
   nomMateria: "Introducción a la ingeniería en tecnologías computacionales",
   horaInicio: "13:30",
   horaFin: "15:00",
@@ -244,4 +231,5 @@ var Materia = {
   nombreProfesor: "Elda Quiroga",
   claveMateria: "TC1022.2",
   salon: "A6206"
-};
+}
+];
