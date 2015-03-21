@@ -277,9 +277,18 @@ var compare = function (code1, code2)
 {
   for (var i = 0; i < code1.length; i++)
   {
-    for (var j = 0; j < code2.length; i++)
+    for (var j = 0; j < code2.length; j++)
     {
-      
+      if (code1[i] == code2[j])
+      {
+        for (var k = 0; k < Materia.length; k++)
+        {
+          if (code1[i] == Materia[k].letra)
+          {
+            Materia[i].claseCompartida = true;
+          }
+        }
+      }
     }
   }
 };
