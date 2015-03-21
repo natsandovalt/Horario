@@ -206,7 +206,7 @@ var Materia = [
   nomMateria: "Fundamentos de Programación",
   horaInicio: "10:30",
   horaFin: "12:00",
-  diasClase [
+  diasClase : [
   false,
   true,
   false,
@@ -221,7 +221,7 @@ var Materia = [
   nomMateria: "Introducción a la ingeniería en tecnologías computacionales",
   horaInicio: "13:30",
   horaFin: "15:00",
-  diasClase [
+  diasClase : [
   false,
   true,
   false,
