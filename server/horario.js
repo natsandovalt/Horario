@@ -17,7 +17,25 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
+  Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
+    extended: false,
+    limit : '500mb'
+  }));
+
   Meteor.startup(function () {
     // code to run on server at startup
-  });
-}
+
+
+});
+};
+
+
+
+Router.route("/parse", function () {
+  console.log("test", this.request.body);
+  //var userString = decodeHTML(this.request.body);
+  //console.log(userString);
+  var emails = JSON.parse(this.request.body.mandrill_events);
+  console.log(emails[0].msg.subject);
+  this.response.end('hgjygujghghji\n');
+}, {where : "server"});
