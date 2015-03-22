@@ -16,6 +16,7 @@ function decodeHtml(html){
 }
 
 
+
 function callDecode(){
 	//For debugging purposes
 	decodeHtml("<td colspan=3D\"10\"><b><code> hola probando askjdfkjafnjl asdjhfkahsdfkj <td colspan=3D\"10\"><b><code> esta es otra prueba");
