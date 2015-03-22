@@ -9,7 +9,7 @@ function decodeHtml(html){
 
 function callDecode(){
 	//For debugging purposes
-	decodeHtml("<td colspan=3D\"10\"><b><code>");
+	decodeHtml("<td colspan=3D\"10\"><b><code> hola probando");
 }
 
 var sContenido = "algo";
