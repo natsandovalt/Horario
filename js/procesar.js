@@ -13,6 +13,7 @@ function decodeHtml(html){
 	};
 	console.log(html);
 	console.log(subjects);
+	generateString(subjects);
 }
 
 
@@ -20,4 +21,23 @@ function decodeHtml(html){
 function callDecode(){
 	//For debugging purposes
 	decodeHtml("<td colspan=3D\"10\"><b><code> hola probando askjdfkjafnjl asdjhfkahsdfkj <td colspan=3D\"10\"><b><code> esta es otra prueba");
+}
+
+
+
+function subjectLetter(subject){
+	//Does not return anything in case of not finding the subject
+	for (var act = 0; act < materias.length; act++) {
+		if(materias[act].clave == subject){
+			return materias[act].letra;
+		}
+	};
+}
+
+
+//Generate user string from decoded html string
+function generateString(subjects){
+	for (var i = 0; i < subjects.length; i++) {
+		console.log(subjects[i]);
+	};
 }
