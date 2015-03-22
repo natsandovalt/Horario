@@ -21,18 +21,29 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
-var horario1 [28] [5];
-var horario2 [28] [5];
-var horasLibre [28] [5];
-for (var i = 0; i < 28; i++)
+var horario1;
+var horario2;
+var horasLibre;
+function inicializa ()
 {
-  for (var j = 0; j < 5; j++)
-   {
-    horario1 [i][j] = 0;
-    horario2 [i][j] = 0;
-    horasLibre [i][j] = 1;
-   }
+  horario1 = [];
+  horario2 = [];
+  horasLibre = [];
+  for (var i = 0; i < 28; i++)
+  {
+    horario1 [i] = new Array (28);
+    horario2 [i] = new Array (28);
+    horasLibre [i] = new Array (28);
+    for (var j = 0; j < 5; j++)
+     {
+        horario1 [i][j] = 0;
+        horario2 [i][j] = 0;
+        horasLibre [i][j] = 1;
+     }
+  }
 }
+
+
 var Materia = [
   {
   nomMateria: "Programación Orientada Objetos",
@@ -274,7 +285,7 @@ var Materia = [
 }
 ];
 
-var findPosition = function (letter)
+var findPosition = function(letter)
 {
   for (var i = 0; i < Materia.length; i++)
   {
@@ -285,7 +296,7 @@ var findPosition = function (letter)
   }
 };
 
-var compare = function (code1, code2)
+function compare (code1, code2)
 {
   for (var i = 0; i < code1.length; i++)
   {
@@ -303,9 +314,9 @@ var compare = function (code1, code2)
       }
     }
   }
-};
+}
 
-var buildSchedule1 = function (day, code1)
+function buildSchedule1 (day, code1)
 {
   for (var i =0; i < code1.length; i++)
   {
@@ -358,9 +369,9 @@ var buildSchedule1 = function (day, code1)
       }
     }
   }
-};
+}
 
-var buildSchedule2 = function (day, code2)
+function buildSchedule2 (day, code2)
 {
   for (var i =0; i < code2.length; i++)
   {
@@ -413,9 +424,9 @@ var buildSchedule2 = function (day, code2)
       }
     }
   }
-};
+}
 
-var compareFreeHours = function ()
+function compareFreeHours ()
 {
   for (var i = 0; i < 28; i++)
   {
@@ -425,4 +436,30 @@ var compareFreeHours = function ()
         horasLibre [i] [j] = 0;
     }
   }
-};
+}
+
+function prueba ()
+{
+var horario1 = [];
+var horario2 = [];
+var horasLibre = [];
+for (var i = 0; i < 28; i++)
+{
+  horario1 [i] = [];
+  horario2 [i] = [];
+  horasLibre [i] = [];
+  for (var j = 0; j < 5; j++)
+   {
+    horario1 [i][j] = 0;
+    horario2 [i][j] = 0;
+    horasLibre [i][j] = 1;
+   }
+}
+  for (var i = 0; i < 28; i++)
+  {
+    for (var j = 0; j <5; j++)
+    {
+      console.log (horario1 [i] [j]);
+    }
+  }
+}
