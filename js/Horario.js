@@ -70,11 +70,11 @@ var Materia = [
   nombreProfesor: "Cleopatra Garza",
   claveMateria: "TC1015.1",
   salon: "CI220B",
-  letra 'C',
+  letra: 'C',
   claseCompartida: false
 },
 {
-  nomMateria :"Administración e innovación en modelos de negocio",
+  nomMateria: a<"Administración e innovación en modelos de negocio",
   horaInicio: "09:00",
   horaFin: "10:30",
   diasClase: [
@@ -230,7 +230,7 @@ var Materia = [
   nomMateria: "Fundamentos de Programación",
   horaInicio: "10:30",
   horaFin: "12:00",
-  diasClase [
+  diasClase: [
   false,
   true,
   false,
@@ -247,7 +247,7 @@ var Materia = [
   nomMateria: "Introducción a la ingeniería en tecnologías computacionales",
   horaInicio: "13:30",
   horaFin: "15:00",
-  diasClase [
+  diasClase: [
   false,
   true,
   false,
