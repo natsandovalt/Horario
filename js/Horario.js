@@ -21,6 +21,18 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+var horario1 [28] [5];
+var horario2 [28] [5];
+var horasLibre [28] [5];
+for (var i = 0; i < 28; i++)
+{
+  for (var j = 0; j < 5; j++)
+   {
+    horario1 [i][j] = 0;
+    horario2 [i][j] = 0;
+    horasLibre [i][j] = 1;
+   }
+}
 var Materia = [
   {
   nomMateria: "Programación Orientada Objetos",
@@ -289,6 +301,128 @@ var compare = function (code1, code2)
           }
         }
       }
+    }
+  }
+};
+
+var buildSchedule1 = function (day, code1)
+{
+  for (var i =0; i < code1.length; i++)
+  {
+    for (var j = 0; j < Materia.length; j++)
+    {
+      if (code1[i] == Materia[j].letter)
+      {
+        if (Materia[j].diasClase[day])
+        {
+          var hInicial = Materia[j].horaInicio.substring(0, 2)*60 + Materia[j].horaInicio.substring(3,5);
+          var hFinal = Materia[j].horaFin.substring(0,2)*60 + Materia[j].horaFin.substring(3,5);
+          var diferencia = hFinal - hInicial;
+          switch(Materia[j].horaInicio)
+          {
+            case "07:30":
+              var clasInicia = 0;
+              break;
+            case "9:00":
+              var clasInicia = 3;
+              break;
+            case "10:30":
+              var clasInicia = 6;
+              break;
+            case "12:00":
+              var clasInicia = 9;
+              break;
+            case "13:30":
+              var clasInicia = 12;
+              break;
+            case "15:00":
+              var clasInicia = 15;
+              break;
+            case "16:30":
+              var clasInicia = 18;
+              break;
+            case "18:00":
+              var clasInicia = 21;
+              break;
+            case "19:30":
+              var clasInicia = 24;
+              break; 
+          }
+          while (diferencia > 0)
+          {
+              horario1 [clasInicia] [day] = 1;
+              diferencia -= 30;
+              clasInicia += 1;
+          }
+        }
+      }
+    }
+  }
+};
+
+var buildSchedule2 = function (day, code2)
+{
+  for (var i =0; i < code2.length; i++)
+  {
+    for (var j = 0; j < Materia.length; j++)
+    {
+      if (code2[i] == Materia[j].letter)
+      {
+        if (Materia[j].diasClase[day])
+        {
+          var hInicial = Materia[j].horaInicio.substring(0, 2)*60 + Materia[j].horaInicio.substring(3,5);
+          var hFinal = Materia[j].horaFin.substring(0,2)*60 + Materia[j].horaFin.substring(3,5);
+          var diferencia = hFinal - hInicial;
+          switch(Materia[j].horaInicio)
+          {
+            case "07:30":
+              var clasInicia = 0;
+              break;
+            case "9:00":
+              var clasInicia = 3;
+              break;
+            case "10:30":
+              var clasInicia = 6;
+              break;
+            case "12:00":
+              var clasInicia = 9;
+              break;
+            case "13:30":
+              var clasInicia = 12;
+              break;
+            case "15:00":
+              var clasInicia = 15;
+              break;
+            case "16:30":
+              var clasInicia = 18;
+              break;
+            case "18:00":
+              var clasInicia = 21;
+              break;
+            case "19:30":
+              var clasInicia = 24;
+              break; 
+          }
+          while (diferencia > 0)
+          {
+              horario2 [clasInicia] [day] = 1;
+              diferencia -= 30;
+              clasInicia += 1;
+          }
+        }
+      }
+    }
+  }
+};
+
+var compareFreeHours = function ()
+{
+  for (var i = 0; i < 28; i++)
+  {
+    for (var j = 0; j < 5; j++)
+    {
+      if (horario1 [i][j] == 0 && horario2 [i][j] == 0)
+        horasLibre [i] [j] = 0;
     }
   }
 };
