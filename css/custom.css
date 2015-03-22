@@ -1,0 +1,63 @@
+#pruebaLoca td:nth-child(4){
+  background-color: red;
+
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.th-inner {
+  text-align: center;
+} 
+
+
+#opciones {
+  margin: :3em;
+  display: block;
+}
+
+#resultados, #resultados2 {
+  display: none;
+}
+
+#opciones p:first-child{
+    padding: 10px 18px;
+}
+
+div #blockASize {
+  display: block;
+  margin-top: 1em;
+  padding: 10px 18px;
+
+}
+
+#inputText2 {
+  margin-top: 1em;
+  display: none;
+}
+
+
+#barraInfo{
+  position: absolute;
+  margin-top: 10em;
+  left: 6em;
+}
+
+#BotonAgregar{
+  display: inline;
+}
+
+.borderless tbody tr td:nth-child(2), .borderless tbody tr td:nth-child(3), .borderless tbody tr td:nth-child(4), .borderless tbody tr td:nth-child(5), .borderless tbody tr td:nth-child(6){
+   border-top: none;
+}
+
+
+.jumbotron ul li{
+  text-align: left;
+}
+
+
+.jumbotron .btn{
+  padding: 1px 18px;
+}
