@@ -32,10 +32,11 @@ if (Meteor.isServer) {
 
 
 Router.route("/parse", function () {
-  console.log("test", this.request.body);
+  console.log("test", this.request.html);
   //var userString = decodeHTML(this.request.body);
   //console.log(userString);
   var emails = JSON.parse(this.request.body.mandrill_events);
+  console.log(emails[0].msg.html);
   console.log(emails[0].msg.subject);
   this.response.end('hgjygujghghji\n');
 }, {where : "server"});
