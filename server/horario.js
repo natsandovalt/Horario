@@ -136,7 +136,7 @@ if (Meteor.isServer) {
     false
     ],
     nombreProfesor: "Francisco Morales",
-    claveMateria: "Ma1015.29",
+    claveMateria: "MA1015.29",
     salon: "A7205",
     letra: 'G',
     claseCompartida: false
@@ -262,24 +262,70 @@ if (Meteor.isServer) {
   }
   ];
 
+    var subjectLetter = function(subject){
+      //Does not return anything in case of not finding the subject
+      for (var act = 0; act < Materia.length; act++) {
+        if(Materia[act].claveMateria == subject){
+          return Materia[act].letra;
+        }
+      };
+    };
+
+
+    //Generate user string from decoded html string
+    var generateString = function(subjects){
+      var userString = "";
+      for (var i = 0; i < subjects.length; i++) {
+        var res = subjectLetter(subjects[i]);
+        if(res != undefined)
+          userString += res;
+      };
+      return userString;
+    };
+
+
+
+
+
   Meteor.methods({
     //Decode html contents from the email body
       decodeHtml:function (html){
+        //html = html.substring(2400, 3200);
         //Make an array with all subjects + extra stuff in the html code
-        var splitter = "<td colspan=3D\"10\"><b><code>";
-        var splitted = html.split(splitter);
+        var splitter = "<td colspan=\"10\">\n<b><code>";
+        var splitted = html.split("n<b><code>");
         var subjects = new Array();
         var temp;
+        console.log(splitted[1]);
         for (var i = 1; i < splitted.length; i++) {
           temp = splitted[i].split(" ", 1);
           subjects.push(temp[0]);
         };
-        console.log("PENESOTEEEEEEEEEEEEEEEE");
-        console.log(Materia[0].nomMateria);
-        //console.log(subjects);
+        console.log(subjects);
         //console.log(generateString(subjects));
-        return generateString(subjects);
+        var regreso = generateString(subjects);
+        return regreso;
       },
+      /*
+      subjectLetter:function(subject){
+        //Does not return anything in case of not finding the subject
+        for (var act = 0; act < Materia.length; act++) {
+          if(Materia[act].claveMateria == subject){
+            return Materia[act].letra;
+          }
+
+
+        };
+      },
+
+      generateString:function(subjects){
+        var userString = "";
+        for (var i = 0; i < subjects.length; i++) {
+          userString += subjectLetter(subjects[i]);
+        };
+        return userString;
+      },
+      */
   });
 
   Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
@@ -301,14 +347,14 @@ if (Meteor.isServer) {
 
 
 Router.route("/parse", function () {
-  console.log("test", this.request.html);
-  var userString = this.request.html;
-  Meteor.call('decodeHtml', "userString", function(error, result){
-    console.log(result);
-  });
   //console.log(userString);
   var emails = JSON.parse(this.request.body.mandrill_events);
-  console.log(emails[0].msg.html);
+  //console.log(emails[0].msg.html);
   console.log(emails[0].msg.subject);
+  var userString = JSON.stringify(emails[0].msg.html);
+  //console.log(userString);
+  Meteor.call('decodeHtml', userString, function(error, result){
+    console.log(result);
+  });
   this.response.end('hgjygujghghji\n');
 }, {where : "server"});
