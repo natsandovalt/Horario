@@ -1,3 +1,330 @@
-<head>
-  <title>simple-todos</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/Horario.js" async></script>
+  </head>
+  <body>
+
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="index.html">Inicio</a></li>
+            <li role="presentation"><a href="acerca.html">Acerca</a></li>
+            <li role="presentation"><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Horario Cool</h3>
+      </div>
+
+      <div class="jumbotron">
+        <!-- Pantalla de de despliegue de resultados -->
+        <div id="resultados">
+          <table id="modal-table" class="table table-bordered borderless">
+            <thead>
+              <tr>
+                <th>
+                  <div class="th-inner "></div>
+                  <div class="fht-cell"></div>
+                </th>
+
+                <th>
+                <div class="th-inner ">Lunes</div>
+                <div class="fht-cell"></div>
+                </th>
+
+                <th>
+                <div class="th-inner ">Martes</div>
+                <div class="fht-cell"></div>
+                </th>
+
+                <th>
+                <div class="th-inner ">Miércoles</div>
+                <div class="fht-cell"></div>
+                </th>
+
+                <th>
+                <div class="th-inner ">Jueves</div>
+                <div class="fht-cell"></div>
+                </th>
+
+                <th>
+                <div class="th-inner ">Viernes</div>
+                <div class="fht-cell"></div>
+                </th>
+              </tr>
+            </thead>
+              <tbody>
+                <tr id="I0">
+                  <td>7:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I1">
+                  <td>8:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I2">
+                  <td>8:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I3">
+                  <td>9:00</td>                  
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I4">
+                  <td>9:30</td>                
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>      
+                  <td></td>              
+                </tr>
+                <tr id="I5">
+                  <td>10:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I6">
+                  <td>10:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>  
+                  <td></td>                
+                </tr>
+                <tr id="I7">
+                  <td>11:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I8">
+                  <td>11:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>      
+                  <td></td>              
+                </tr>
+                <tr id="I9">
+                  <td>12:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>              
+                </tr>
+                <tr id="I10">
+                  <td>12:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I11">
+                  <td>13:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I12">
+                  <td>13:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I13">
+                  <td>14:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I14">
+                  <td>14:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I15">
+                  <td>15:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I16">
+                  <td>15:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I17">
+                  <td>16:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I18">
+                  <td>16:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I19">
+                  <td>17:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I20"> 
+                  <td>17:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I21">
+                  <td>18:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I22">
+                  <td>18:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I23">
+                  <td>19:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I24">
+                  <td>19:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I25">
+                  <td>20:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I26">
+                  <td>20:30</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr id="I27">
+                  <td>21:00</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+          <div id="resultados2">
+            <h1>Asisten juntos a las siguientes clases: </h1>
+            <p class="lead" id="TextoMat"></p>
+          </div>
+
+          <!-- Pantalla de seleccion de opciones -->
+          <div id="opciones">
+            <p>Ingresa el código de tu horario. Si aun no tienes el código, reenvía el correo que recibiste del Tec a test@horario.irvel.com</p>
+            <form id="seleccionarO" class="navbar-form navbar-center" role="submit">
+              <div class="form-group">
+                <input id="inputText1" type="text" class="form-control" placeholder="Código de tu horario">
+                <input id="inputText2" type="text" class="form-control" placeholder="Código del 2º horario">
+
+              </div>
+              <p id= "BotonAgregar"><a class="btn btn-default" onclick="botonMas()"><span id="signoMas">+</span></a></p>
+
+
+            </form>
+            <p id= "blockASize"><a class="btn btn-lg btn-success" href="#" role="button" onclick="fillTable()">Enviar</a></p>
+          </div>
+
+
+      </div>
+
+      
+
+      <footer class="footer">
+        <p>&copy; Horario Cool 2015</p>
+      </footer>
+
+    </div> <!-- /container -->
+  </body>
+</html>
