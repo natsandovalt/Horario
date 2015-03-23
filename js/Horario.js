@@ -457,7 +457,7 @@ function fillTable(){
   if(document.getElementById("inputText2").style.display == "block"){
     //Van a ser 2
     var inputText1 = document.getElementById("inputText1").value;
-    var inputText2 = document.getElementById("inputText1").value;
+    var inputText2 = document.getElementById("inputText2").value;
     document.getElementById("resultados2").style.display = "block";
     document.getElementById("opciones").style.display = "none";
     console.log(inputText1);
@@ -538,7 +538,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 1+1 || j==4+1)){
-                  col.style.background = "#374852";
+                  col.style.background = "#64B5F6";
                   col.style.color = "white";
                   col.innerHTML = Materia[0].nomMateria;
   
@@ -570,7 +570,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 1+1 || j==4+1)){
-                  col.style.background = "#A8DBA8";
+                  col.style.background = "#5C6BC0";
                   col.style.color = "white";
                   col.innerHTML = Materia[1].nomMateria;
                 }
@@ -597,7 +597,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 1+1 || j==4+1)){
-                  col.style.background = "#79BD9A";
+                  col.style.background = "#4DD0E1";
                   col.style.color = "white";
                   col.innerHTML = Materia[2].nomMateria;
                 }
@@ -624,7 +624,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==3+1)){
-                  col.style.background = "#3B8686";
+                  col.style.background = "#4DB6AC";
                   col.style.color = "white";
                   col.innerHTML = Materia[3].nomMateria;
                 }
@@ -651,7 +651,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==3+1)){
-                  col.style.background = "#0B486B";
+                  col.style.background = "#66BB6A";
                   col.style.color = "white";
                   col.innerHTML = Materia[4].nomMateria;
                 }
@@ -678,7 +678,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==3+1)){
-                  col.style.background = "#774F38";
+                  col.style.background = "#FFB74D";
                   col.style.color = "white";
                   col.innerHTML = Materia[5].nomMateria;
                 }
@@ -705,7 +705,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==3+1)){
-                  col.style.background = "#E08E79";
+                  col.style.background = "#FF8A65";
                   col.style.color = "white";
                   col.innerHTML = Materia[6].nomMateria;
                 }
@@ -733,7 +733,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==2+1 || j==3+1)){
-                  col.style.background = "#9E673A";
+                  col.style.background = "#A1887F";
                   col.style.color = "white";
                   col.innerHTML = Materia[7].nomMateria;
                 }
@@ -760,7 +760,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 1+1 || j==4+1)){
-                  col.style.background = "#ECE5CE";
+                  col.style.background = "#78909C";
                   col.style.color = "white";
                   col.innerHTML = Materia[8].nomMateria;
                 }
@@ -788,7 +788,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==3+1)){
-                  col.style.background = "#C5E0DC";
+                  col.style.background = "#E57373";
                   col.style.color = "white";
                   col.innerHTML = Materia[9].nomMateria;
                 }
@@ -816,7 +816,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==2+1 || j==3+1)){
-                  col.style.background = "#83A036";
+                  col.style.background = "#BA68C8";
                   col.style.color = "white";
                   col.innerHTML = Materia[10].nomMateria;
                 }
@@ -843,7 +843,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && (j == 0+1 || j==3+1)){
-                  col.style.background = "#C7C465";
+                  col.style.background = "#FF9800";
                   col.style.color = "white";
                   col.innerHTML = Materia[11].nomMateria;
                 }
@@ -873,7 +873,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && ( j==1+1 || j==4+1)){
-                  col.style.background = "#78782E";
+                  col.style.background = "#69F0AE";
                   col.style.color = "white";
 
                   col.innerHTML = Materia[12].nomMateria;
@@ -898,7 +898,7 @@ function nombresMaterias1 (codigo1)
                 //console.log(row.cells);
                 console.log(col);
                 if(i == inicia+1 && ( j==1+1 || j==4+1)){
-                  col.style.background = "#193600";
+                  col.style.background = "#F44336";
                   col.style.color = "white";
                   col.innerHTML = Materia[13].nomMateria;
                 }
