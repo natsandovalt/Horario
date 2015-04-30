@@ -14,6 +14,7 @@ if (Meteor.isClient) {
       Session.set('counter', Session.get('counter') + 1);
     }
   });
+
 }
 
 
@@ -21,6 +22,30 @@ if (Meteor.isClient) {
 
 
 if (Meteor.isServer) {
+/*Email.send({
+from: "yay@horario.bymail.in",
+to: "jorge.armando@me.com",
+subject: "Test",
+text: "Here is some text"
+});*/
+}
+Meteor.startup(function() {
+    return Meteor.Mandrill.config({
+        username: "jorge.armando@me.com",
+        key: "BbtIaDoQhIkqbXOio02ppQ"
+    });
+});
+
+// this.sendEmail = function(to, subject, htmlText) {
+//     return Meteor.Mandrill.send({
+//         to: "jorge.armando@me.com",
+//         from: "test@horario.irvel.com",
+//         subject: "work",
+//         html: "htmlText"
+//     });
+// };
+
+
   var Materia = [
     {
     nomMateria: "Programación Orientada Objetos",
@@ -284,8 +309,30 @@ if (Meteor.isServer) {
     };
 
 
+/*this.sendEmail = function(to, subject, htmlText) {
+    return Meteor.Mandrill.send({
+        to: to,
+        from: fromEmail,
+        subject: subject,
+        html: htmlText
+    });*/
 
+/*Meteor.startup(function() {
+    return Meteor.Mandrill.config({
+        username: "jorge.armando@me.com",
+        key: "BbtIaDoQhIkqbXOio02ppQ"
+    });
+});*/
 
+/*this.sendEmail = function(to, subject, htmlText) {
+    return Meteor.Mandrill.send({
+        to: to,
+        from: fromEmail,
+        subject: subject,
+        html: htmlText
+    });
+};
+};*/
 
   Meteor.methods({
     //Decode html contents from the email body
@@ -305,7 +352,8 @@ if (Meteor.isServer) {
         //console.log(generateString(subjects));
         var regreso = generateString(subjects);
         return regreso;
-      },
+      }
+
       /*
       subjectLetter:function(subject){
         //Does not return anything in case of not finding the subject
@@ -328,6 +376,24 @@ if (Meteor.isServer) {
       */
   });
 
+  function decodeHtml (html){
+    //html = html.substring(2400, 3200);
+    //Make an array with all subjects + extra stuff in the html code
+    var splitter = "<td colspan=\"10\">\n<b><code>";
+    var splitted = html.split("n<b><code>");
+    var subjects = new Array();
+    var temp;
+    console.log(splitted[1]);
+    for (var i = 1; i < splitted.length; i++) {
+      temp = splitted[i].split(" ", 1);
+      subjects.push(temp[0]);
+    };
+    console.log(subjects);
+    //console.log(generateString(subjects));
+    var regreso = generateString(subjects);
+    return regreso;
+  }
+
   Router.onBeforeAction(Iron.Router.bodyParser.urlencoded({
     extended: false,
     limit : '500mb'
@@ -338,23 +404,52 @@ if (Meteor.isServer) {
 
 
 });
-};
 
 
 
 
 
-
-
-Router.route("/parse", function () {
+Router.route("/parse", function (){
   //console.log(userString);
+  if(typeof this.request.body.mandrill_events == "undefined") {
+    console.log("NOPE");
+    this.response.end('nope\n');
+    return false;
+  }
   var emails = JSON.parse(this.request.body.mandrill_events);
   //console.log(emails[0].msg.html);
   console.log(emails[0].msg.subject);
   var userString = JSON.stringify(emails[0].msg.html);
-  //console.log(userString);
-  Meteor.call('decodeHtml', userString, function(error, result){
-    console.log(result);
+  var splitted2 = userString.split("A0",2);
+  // console.log (splitted2[1].split("@itesm.mx",2)[0]);
+  // //console.log(splitted2[1].split("@itesm.mx",2)[0]);
+  // var user = "A0" + (splitted2[1].split("@itesm.mx",2)[0]) + "@itesm.mx";
+  var potentialUsers = userString.match(/A0\d{7}\@itesm\.mx/i);
+  console.log("potential", potentialUsers);
+  if(potentialUsers == null) {
+
+  }else{
+    var user = potentialUsers[0];
+  }
+
+  console.log(user);
+  var codigo;
+  var codigo = decodeHtml(userString);
+  console.log(process.env.MAIL_URL);
+  if (user == null)
+  {
+    console.log("null user");
+  }
+  else
+  {
+    console.log("good user");
+  Meteor.Mandrill.send({
+      to: user,
+      from: "test@horario.irvel.com",
+      subject: codigo,
+      html: "Nothing"
   });
-  this.response.end('hgjygujghghji\n');
+  this.response.end('yesssssss\n');
+}
+
 }, {where : "server"});
